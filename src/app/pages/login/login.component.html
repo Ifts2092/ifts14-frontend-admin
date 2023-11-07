@@ -1,0 +1,33 @@
+<main class="container">
+    <article class="grid">
+      <div>
+        <hgroup>
+          <h1>Adminstracion de IFTS14</h1>
+          <h2>Ingresa tus credenciales para ingresar al Sistema</h2>
+        </hgroup>
+        <form>
+          <input
+            type="text"
+            [(ngModel)]="login.username"
+            name="login"
+            placeholder="Login"
+            aria-label="Login"
+            autocomplete="nickname"
+            
+            required
+          />
+          <input
+            type="password"
+            [(ngModel)]="login.password"
+            name="password"
+            placeholder="Password"
+            aria-label="Password"
+            autocomplete="current-password"
+            required
+          />
+          <button type="button" class="contrast" (click)="gotoHome()">Ingresar</button>
+        </form>
+      </div>
+      <div></div>
+    </article>
+</main>

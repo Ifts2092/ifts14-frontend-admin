@@ -1,0 +1,27 @@
+<h2 class="titulo">Posts</h2>
+
+<table>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>    
+        <th width="200" scope="col">Accions</th>  
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of list">
+            <td scope="col">{{item.id}}</td>
+            <td scope="col">{{item.title}}</td>
+            <td class="acciones">
+              <a [routerLink]="['/post/details']" [queryParams]="{id:item.id}"><button class="button-editar">
+                Editar
+              </button></a>
+               <div><button  (click)="remove(item.id)" class="button-editar">
+                Eliminar
+              </button></div> 
+          </td>
+        </tr>
+    </tbody>
+</table>
+
+<a [routerLink]="['/post/details']"><button>Agregar Post</button></a>

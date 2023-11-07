@@ -1,0 +1,36 @@
+<h2 class="titulo">Post:</h2>
+
+<form>
+
+    <!-- Grid -->
+    <div class="grid">
+  
+      <!-- Markup example 1: input is inside label -->
+      <label for="title">
+        Title: 
+      </label>
+      <input type="text" id="title" name="title" placeholder="Title..."  [(ngModel)]="item.title" required>
+  
+
+      <label for="category">Category</label>
+      <select [(ngModel)]="item.categoryId" name="category" id="category">
+          <option  *ngFor="let c of categories" value="{{c.id}}" >{{c.name}}</option>
+      </select>
+
+      <label for="section">Section</label>
+      <select [(ngModel)]="item.sectionId" name="section" id="section">
+          <option  *ngFor="let s of section" value="{{s.id}}" >{{s.name}}</option>
+      </select>
+
+
+      <label for="content">
+        Content: 
+      </label>
+      <textarea type="text" id="conent" name="content" placeholder="Content..."  [(ngModel)]="item.content" required></textarea>
+      
+    </div>
+  
+    <!-- Button -->
+    <button (click)="save()">Guardar</button>
+  
+  </form>

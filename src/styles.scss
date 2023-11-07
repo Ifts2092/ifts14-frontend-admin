@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/pico.fluid.classless.min.css"   ;
+
+body {
+    padding:50px;
+}
+
+.remove_pico{
+    background-color: red;  
+}
+
+.titulo{
+    text-align: center;
+}
+.button-editar{
+    margin-bottom: 0;
+    // width: 150px;
+    padding: 0;
+    color: black;
+    padding:5px;
+}
+
+.acciones {
+    flex-flow: row;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
