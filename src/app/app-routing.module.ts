@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'career/details', component: CareerDetailsComponent, canActivate: [UserGuard]  },
   { path: 'subject/list/:careerId', component: SubjectListComponent, canActivate: [UserGuard]  },
   { path: 'subject/details', component: SubjectDetailsComponent, canActivate: [UserGuard]  },
-  { path: 'settings', component: SettingsComponent, canActivate: [UserGuard] }
+  { path: 'settings', component: SettingsComponent, canActivate: [UserGuard] },
   { path: '**', component: PageNotFoundComponent, canActivate: [UserGuard]  }
 
 

@@ -40,7 +40,7 @@ import { RequirementComponent } from './pages/requirement/requirement.component'
     CareerListComponent,
     SubjectDetailsComponent,
     SubjectListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
     SettingsComponent,
     RequirementComponent
 
