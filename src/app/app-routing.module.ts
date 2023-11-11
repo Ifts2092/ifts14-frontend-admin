@@ -11,9 +11,13 @@ import { CareerListComponent } from './pages/career/career-list/career-list.comp
 import { SubjectListComponent } from './pages/subject/subject-list/subject-list.component';
 import { SubjectDetailsComponent } from './pages/subject/subject-details/subject-details.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { RequirementComponent } from './pages/requirement/requirement.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'requirement', component: RequirementComponent, canActivate: [UserGuard] },
   { path: 'post/list', component: PostListComponent, canActivate: [UserGuard] },
   { path: 'post/details', component: PostDetailsComponent, canActivate: [UserGuard] },
   { path: 'user/list', component: UserListComponent, canActivate: [UserGuard] },
@@ -22,7 +26,9 @@ const routes: Routes = [
   { path: 'career/details', component: CareerDetailsComponent, canActivate: [UserGuard]  },
   { path: 'subject/list/:careerId', component: SubjectListComponent, canActivate: [UserGuard]  },
   { path: 'subject/details', component: SubjectDetailsComponent, canActivate: [UserGuard]  },
+  { path: 'settings', component: SettingsComponent, canActivate: [UserGuard] }
   { path: '**', component: PageNotFoundComponent, canActivate: [UserGuard]  }
+
 
 ]
 

@@ -22,11 +22,15 @@ import { CareerListComponent } from './pages/career/career-list/career-list.comp
 import { SubjectDetailsComponent } from './pages/subject/subject-details/subject-details.component';
 import { SubjectListComponent } from './pages/subject/subject-list/subject-list.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { FileUploadComponent } from './componentes/file-upload/file-upload.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { RequirementComponent } from './pages/requirement/requirement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NabbarComponent,
+    FileUploadComponent,
     LoginComponent,
     PostListComponent,
     PostDetailsComponent,
@@ -37,6 +41,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     SubjectDetailsComponent,
     SubjectListComponent,
     PageNotFoundComponent
+    SettingsComponent,
+    RequirementComponent
+
   ],
   imports: [
     RouterModule,

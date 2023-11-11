@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 import { RoleService } from 'src/app/services/role.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,6 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 export class UserDetailsComponent {
 
   item:any = {
+    password: '',
+    passwordRepeat: ''
   }
 
   roles:any = [];
@@ -32,7 +35,9 @@ export class UserDetailsComponent {
 
     if(this.item.id){
       let a = this.userService.getById(this.item.id).subscribe(data => {
-        this.item = data;
+        //this.item = data;
+        Object.assign(this.item, data);
+        
       });
     }  
 
@@ -42,10 +47,14 @@ export class UserDetailsComponent {
 
   }
 
-  save(){
-    this.userService.save(this.item).subscribe(data => {
+  async save(){
+    let result = await lastValueFrom(this.userService.save(this.item));
+
+    if(!result.error)
       this.router.navigate(['user/list']);
-    });  
+    else 
+      alert(result.error);
+    
   }
 
 }

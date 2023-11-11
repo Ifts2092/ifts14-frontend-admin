@@ -1,0 +1,21 @@
+<h2 class="titulo">Requisito:</h2>
+
+<form>
+
+    <!-- Grid -->
+    <div class="grid">
+  
+      <!-- Markup example 1: input is inside label -->
+    
+      <label for="title">
+        {{requirement.key}}
+      </label>
+      <textarea id="{{ requirement?.key }}" name="{{ requirement?.key }}" placeholder="Title..."  [(ngModel)]="requirement.value" required>
+      </textarea>
+    
+    </div>
+
+    <!-- Button -->
+    <button (click)="save()">Guardar</button>
+  
+  </form>

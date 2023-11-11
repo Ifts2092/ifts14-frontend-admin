@@ -1,4 +1,4 @@
-<h2 class="titulo">Post:</h2>
+<h2 class="titulo">Publicacion:</h2>
 
 <form>
 
@@ -7,29 +7,46 @@
   
       <!-- Markup example 1: input is inside label -->
       <label for="title">
-        Title: 
+        Titulo: 
       </label>
-      <input type="text" id="title" name="title" placeholder="Title..."  [(ngModel)]="item.title" required>
+      <input type="text" id="title" name="title"  [(ngModel)]="item.title" required>
   
 
-      <label for="category">Category</label>
+      <label for="category">Categoria</label>
       <select [(ngModel)]="item.categoryId" name="category" id="category">
           <option  *ngFor="let c of categories" value="{{c.id}}" >{{c.name}}</option>
       </select>
 
-      <label for="section">Section</label>
+      <label for="section">Seccion</label>
       <select [(ngModel)]="item.sectionId" name="section" id="section">
           <option  *ngFor="let s of section" value="{{s.id}}" >{{s.name}}</option>
       </select>
 
 
+
+    <input type="file" class="file-input"
+       (change)="onFileSelected($event)" #fileUpload>
+
+      <div class="file-upload">
+
+        {{fileName || "No se ha seleccionado ningun archivo para subir"}}
+
+          <button mat-mini-fab color="primary" class="upload-btn"
+            (click)="fileUpload.click()">
+              Subir portada
+          </button>
+      </div>
+      
+      <img class="portada" src="{{previewImg || 'assets/no-image.png' }}" />
+      
+
       <label for="content">
-        Content: 
+        Contenido: 
       </label>
-      <textarea type="text" id="conent" name="content" placeholder="Content..."  [(ngModel)]="item.content" required></textarea>
+      <textarea type="text" id="conent" name="content" [(ngModel)]="item.content" required></textarea>
       
     </div>
-  
+
     <!-- Button -->
     <button (click)="save()">Guardar</button>
   

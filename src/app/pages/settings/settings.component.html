@@ -1,0 +1,21 @@
+<h2 class="titulo">Configuracion:</h2>
+
+<form>
+
+    <!-- Grid -->
+    <div class="grid">
+  
+      <!-- Markup example 1: input is inside label -->
+    <div *ngFor="let s of settings">
+      <label for="title">
+        {{ s.key }}
+      </label>
+      <input type="text" id="{{s.key}}" name="{{s.key}}" placeholder="Title..."  [(ngModel)]="s.value" required>
+    </div>
+
+    </div>
+
+    <!-- Button -->
+    <button (click)="save()">Guardar</button>
+  
+  </form>

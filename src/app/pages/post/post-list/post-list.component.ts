@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-post-list',
@@ -14,20 +15,23 @@ export class PostListComponent {
   
   }
 
-  ngOnInit() {
-    this.getList();
+  async ngOnInit() {
+       this.list = await lastValueFrom(this.postService.getList());
   }
 
-  async getList(){
-    this.postService.getList().subscribe(data => {
-       this.list = data;
-    });    
-  }
+  // async getList(){
+  //   this.postService.getList().subscribe(data => {
+  //      this.list = data;
+  //   });    
+  // }
 
   async remove(id:any){
-    this.postService.delete(id).subscribe(data => {
-       data;
-    });    
+
+    if (confirm("Desea eliminar el post?")) {
+      await lastValueFrom(this.postService.delete(id));
+      await this.ngOnInit();
+    }
+    
   }
   
 
