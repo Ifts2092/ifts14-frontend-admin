@@ -3,6 +3,7 @@
       <li><strong>Sistema</strong></li>
     </ul>
     <ul *ngIf="isLogged()">
+      <li><a [routerLink]="['/career/list']">Careers</a></li>
       <li><a [routerLink]="['/user/list']">Users</a></li>
       <li><a [routerLink]="['/post/list']">Posts</a></li>
       <li><button (click)="logout()">Salir</button></li>

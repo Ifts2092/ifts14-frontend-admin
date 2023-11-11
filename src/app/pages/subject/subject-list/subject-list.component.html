@@ -1,0 +1,30 @@
+<h2 class="titulo">Materias</h2>
+
+<table>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>    
+        <th scope="col">Año</th>    
+        <th scope="col">Tipo</th>    
+        <th width="200" scope="col">Acciones</th>  
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of list">
+            <td scope="col">{{item.id}}</td>
+            <td scope="col">{{item.name}}</td>
+            <td scope="col">{{item.year}}</td>
+            <td scope="col">{{item.type}}</td>
+            <td class="acciones">
+              <a [routerLink]="['/subject/details']" [queryParams]="{id:item.id,careerId:id}"><button class="button-editar">
+                Editar
+              </button></a>
+               <div><button  (click)="remove(item.id)" class="button-editar">
+                Eliminar
+              </button></div> 
+          </td>
+        </tr>
+    </tbody>
+</table>
+<a [routerLink]="['/subject/details']" [queryParams]="{careerId:id}"><button>Agregar Materia</button></a>

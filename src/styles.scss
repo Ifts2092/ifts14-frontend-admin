@@ -12,7 +12,11 @@ body {
 .titulo{
     text-align: center;
 }
-.button-editar{
+.button{
+    width: 100px;
+}
+
+.button,.button-editar{
     margin-bottom: 0;
     // width: 150px;
     padding: 0;

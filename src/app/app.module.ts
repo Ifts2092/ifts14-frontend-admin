@@ -17,6 +17,11 @@ import { NabbarComponent } from './componentes/nabbar/nabbar.component';
 import { PostService } from './services/post.service';
 import { UserListComponent } from './pages/user/user-list/user-list.component';
 import { UserDetailsComponent } from './pages/user/user-details/user-details.component';
+import { CareerDetailsComponent } from './pages/career/career-details/career-details.component';
+import { CareerListComponent } from './pages/career/career-list/career-list.component';
+import { SubjectDetailsComponent } from './pages/subject/subject-details/subject-details.component';
+import { SubjectListComponent } from './pages/subject/subject-list/subject-list.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { UserDetailsComponent } from './pages/user/user-details/user-details.com
     PostListComponent,
     PostDetailsComponent,
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    CareerDetailsComponent,
+    CareerListComponent,
+    SubjectDetailsComponent,
+    SubjectListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     RouterModule,
