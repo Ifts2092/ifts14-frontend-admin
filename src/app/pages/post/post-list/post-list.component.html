@@ -4,13 +4,17 @@
     <thead>
       <tr>
 
-        <th scope="col">Titulo</th>    
-        <th width="200" scope="col">Accions</th>  
+        <th scope="col">Titulo</th>
+        <th scope="col">Seccion</th>
+        <th scope="col">Categoria</th>
+        <th width="200" scope="col">Acciones</th>  
       </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of list">
             <td scope="col">{{item.title}}</td>
+            <td scope="col">{{item.section?.name}}</td>
+            <td scope="col">{{item.category?.name}}</td>
             <td class="acciones">
               <a [routerLink]="['/post/details']" [queryParams]="{id:item.id}"><button class="button-editar">
                 Editar

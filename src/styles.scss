@@ -30,3 +30,48 @@ body {
     width: 100%;
     justify-content: space-around;
 }
+
+@media only screen and (prefers-color-scheme: dark) {
+
+    
+	.angular-editor-toolbar  {
+		background-color: #333333 !important;
+		border: 1px solid #666 !important;; 
+        
+	}
+
+	.angular-editor-button {
+		background-color: #333333 !important;
+		border: 1px solid #666 !important;
+	}
+
+    .ae-font .ae-picker-label {
+        background-color: #333333 !important;  
+    }
+
+    
+}
+
+.angular-editor-toolbar  {
+    width:100%;
+}
+
+.ae-picker {
+    height: 100%;
+}
+
+.angular-editor-toolbar {
+    display: flex;
+    flex-flow: row;
+    -webkit-flex-wrap: wrap;   
+}
+.angular-editor-toolbar-set {
+    display: flex !important;
+    padding: 10px;
+}
+.angular-editor-button {
+    padding: 0.6rem !important;
+    margin:0px;
+    padding:0px;
+}
+

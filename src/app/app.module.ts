@@ -25,6 +25,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { FileUploadComponent } from './componentes/file-upload/file-upload.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { RequirementComponent } from './pages/requirement/requirement.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { RequirementComponent } from './pages/requirement/requirement.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularEditorModule
   ],
   providers: [
     AuthService,

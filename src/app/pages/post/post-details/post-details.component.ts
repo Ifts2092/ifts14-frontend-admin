@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { editorConfig } from 'src/app/config.editor';
 
 import { CategoryService } from 'src/app/services/category.service';
 import { PostService } from 'src/app/services/post.service';
 import { SectionService } from 'src/app/services/section.service';
 import { environment } from 'src/environments/environment';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-post-details',
@@ -14,6 +16,10 @@ import { environment } from 'src/environments/environment';
 export class PostDetailsComponent {
 
   item:any = {
+    title:'',
+    sectionId:'',
+    categoryId:'',
+    content: ''
   }
   categories:any = [];
 
@@ -86,5 +92,8 @@ save(){
     }
 
 
+    getConfigEditor(){
+      return editorConfig;
+    }
 
 }

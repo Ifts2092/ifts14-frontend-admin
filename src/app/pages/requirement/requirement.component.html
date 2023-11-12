@@ -10,11 +10,13 @@
       <label for="title">
         {{requirement.key}}
       </label>
-      <textarea id="{{ requirement?.key }}" name="{{ requirement?.key }}" placeholder="Title..."  [(ngModel)]="requirement.value" required>
-      </textarea>
+      <!--<textarea id="{{ requirement?.key }}" name="{{ requirement?.key }}" placeholder="Title..."  [(ngModel)]="requirement.value" required>
+      </textarea>-->
+      <angular-editor  id="{{ requirement?.key }}" name="{{ requirement?.key }}"  [config]="getConfigEditor()" [(ngModel)]="requirement.value"></angular-editor>
     
     </div>
 
+    <br>
     <!-- Button -->
     <button (click)="save()">Guardar</button>
   

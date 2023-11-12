@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { editorConfig } from 'src/app/config.editor';
 import { SettingService } from 'src/app/services/setting.service';
 import { environment } from 'src/environments/environment';
 
@@ -36,4 +37,9 @@ export class RequirementComponent {
     });  
    
   }
+
+  getConfigEditor(){
+    return editorConfig;
+  }
+
 }

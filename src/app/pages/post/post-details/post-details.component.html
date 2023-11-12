@@ -38,15 +38,21 @@
       </div>
       
       <img class="portada" src="{{previewImg || 'assets/no-image.png' }}" />
-      
+      <br>
+      <br>
 
+      <!--
       <label for="content">
         Contenido: 
       </label>
-      <textarea type="text" id="conent" name="content" [(ngModel)]="item.content" required></textarea>
+      <textarea type="text" [(ngModel)]="item.content" required></textarea>
+     -->
       
-    </div>
+      <angular-editor  id="conent" name="content" [config]="getConfigEditor()" [(ngModel)]="item.content"></angular-editor>
 
+    </div>
+    
+    <br>
     <!-- Button -->
     <button (click)="save()">Guardar</button>
   
