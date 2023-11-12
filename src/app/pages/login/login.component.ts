@@ -15,7 +15,15 @@ export class LoginComponent {
     password: ''
   }
 
-  constructor(private router : Router, private authService:AuthService) {}
+  constructor(private router : Router, private authService:AuthService) {
+    if(this.isLogged()){
+      this.router.navigate(['post/list']);
+    }
+  }
+
+  isLogged(){
+    return this.authService.isLoggedIn();
+  }
 
 
   gotoHome(){

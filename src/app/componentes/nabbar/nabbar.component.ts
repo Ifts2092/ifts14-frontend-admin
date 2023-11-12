@@ -15,7 +15,10 @@ export class NabbarComponent {
     
   }
 
-  
+  isAdmin(){
+    return this.authService.isAdmin();
+  }
+
   isLogged(){
     return this.authService.isLoggedIn();
   }

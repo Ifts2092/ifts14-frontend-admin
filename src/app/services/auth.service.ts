@@ -75,6 +75,25 @@ export class AuthService {
         return !this.isLoggedIn();
     }
 
+    isAdmin(){
+        let result = false;
+        try{
+            let token = localStorage.getItem('id_token');
+            if(token){
+                let tokenParts = token.split('.');
+                
+                if(tokenParts && tokenParts.length > 1 ){
+                    let payload:any = null;
+                    payload = atob(tokenParts[1]);
+                    result =  JSON.parse(payload).role == "Admin"
+                }
+            }
+        } catch (e) {
+            result = false;
+        }
+        return result
+    }
+
 
 }
  
