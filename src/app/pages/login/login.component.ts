@@ -28,7 +28,11 @@ export class LoginComponent {
 
   gotoHome(){
     this.authService.login(this.login.username, this.login.password).subscribe( (response:any) => {
-      this.router.navigate(['post/list']);
+      if(response.messege){
+        alert("Usuario o Contraseña incorrecto");
+      } else {
+        this.router.navigate(['post/list']);
+      }  
     });
 
     

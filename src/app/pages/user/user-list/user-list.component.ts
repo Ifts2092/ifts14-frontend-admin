@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { UserService } from 'src/app/services/user.service';
+import { lastValueFrom } from 'rxjs';
 
 
 @Component({
@@ -27,9 +28,14 @@ export class UserListComponent {
   }
 
   async remove(id:any){
-    this.userService.delete(id).subscribe(data => {
-       data;
-    });    
+    if (confirm("Desea eliminar el usuario?")) {
+      let data = await lastValueFrom(this.userService.delete(id))
+      if(data?.error){
+        alert(data.error);
+      } else {
+        await this.ngOnInit();
+      }
+    }
   }
   
 

@@ -28,8 +28,11 @@ export class PostListComponent {
   async remove(id:any){
 
     if (confirm("Desea eliminar el post?")) {
-      await lastValueFrom(this.postService.delete(id));
-      await this.ngOnInit();
+      let data = await lastValueFrom(this.postService.delete(id));
+        if(data?.error){
+      } else {
+        await this.ngOnInit();
+      }
     }
     
   }

@@ -17,12 +17,12 @@
       <input type="password" id="password" name="password" [(ngModel)]="item.password" required>
   
       <label for="passwordRepeat">
-        Password Repeat: 
+        Repetir Password: 
       </label>
       <input type="password" id="passwordRepeat" name="passwordRepeat"  [(ngModel)]="item.passwordRepeat" required>
   
 
-      <label for="Rol">Category</label>
+      <label for="Rol">Rol</label>
       <select [(ngModel)]="item.roleId" name="role" id="rol">
           <option  *ngFor="let r of roles" value="{{r.id}}" >{{r.name}}</option>
       </select>

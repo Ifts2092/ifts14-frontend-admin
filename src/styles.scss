@@ -30,8 +30,18 @@ body {
     width: 100%;
     justify-content: space-around;
 }
-
+@media only screen and (prefers-color-scheme: light) {
+    button{
+        color: white !important;
+    }
+    .angular-editor-toolbar-set{
+        [role=button], button, input[type=button], input[type=reset], input[type=submit] {
+            color: black !important;
+        }
+    }
+}
 @media only screen and (prefers-color-scheme: dark) {
+
 
     
 	.angular-editor-toolbar  {
@@ -49,6 +59,14 @@ body {
         background-color: #333333 !important;  
     }
 
+    button{
+        color: black !important;
+    }
+    .angular-editor-toolbar-set{
+        [role=button], button, input[type=button], input[type=reset], input[type=submit] {
+            color: white !important;
+        }
+    }
     
 }
 

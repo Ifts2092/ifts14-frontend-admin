@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SubjectService } from 'src/app/services/subject.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-subject-list',
@@ -29,9 +30,14 @@ export class SubjectListComponent {
   }
 
   async remove(id:any){
-    this.subjectService.delete(id).subscribe(data => {
-       data;
-    });    
+    if (confirm("Desea eliminar la materia?")) {
+      let data = await lastValueFrom(this.subjectService.delete(id))
+      if(data?.error){
+          alert("No se puede borrar la materia");
+       } else {
+          await this.ngOnInit();
+      }    
+    }
   }
 
 }

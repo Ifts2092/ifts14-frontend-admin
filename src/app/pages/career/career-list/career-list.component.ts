@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CareerService } from 'src/app/services/career.service';
 import { Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-career-list',
@@ -29,8 +30,13 @@ export class CareerListComponent {
   }
 
   async remove(id:any){
-    this.careerService.delete(id).subscribe(data => {
-       data;
-    });    
+    if (confirm("Desea eliminar la carrera?")) {
+      let data = await lastValueFrom(this.careerService.delete(id))
+      if(data?.error){
+          alert("No se puede eliminar una carrera con materia adentro")
+       } else {
+          await this.ngOnInit();
+      }    
+    }
   }
 }

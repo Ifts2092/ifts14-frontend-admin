@@ -13,9 +13,9 @@
       <input type="text" placeholder="Año de cursada..." [(ngModel)]="item.year" name="anio" id="anio"required/>
 
       <label for="tipo">Tipo</label>
-      <select id="tipo" required>
-        <option value="anual" selected>Anual</option>
-        <option value="cuatrimestral" selected>Cuatrimestral</option>
+      <select [(ngModel)]="item.type" name="type" id="type" required>
+        <option value="Anual" selected>Anual</option>
+        <option value="Cuatrimestral" selected>Cuatrimestral</option>
       </select>
 
     </div>
